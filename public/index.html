@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pantalla del publico</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+        integrity="sha256-PHcOkPmOshsMBC+vtJdVr5Mwb7r0LkSVJPlPrp/IMpU=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+        integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<!-- <body class="container"> -->
+
+<body>
+
+    <table>
+        <tr>
+            <td valign="middle" class="ticket-actual" id="mesa1">
+                <span id="lblTicket1" class="ticket-actual-numero">Espere <i class="fas fa-spinner fa-pulse"></i>
+                </span>
+                <br>
+                <span id="lblEscritorio1" class="ticket-actual-escritorio badge"></span>
+            </td>
+            <td>
+                <table>
+                    <tr class="celda" id="mesa2">
+                        <td>
+                            <span id="lblTicket2" class="ticket-secundario"></span>
+                            <br>
+                            <span id="lblEscritorio2" class="badge badge-dark"></span>
+                        </td>
+                    </tr>
+                    <tr class="celda" id="mesa3">
+                        <td>
+                            <span id="lblTicket3" class="ticket-secundario"></span>
+                            <br>
+                            <span id="lblEscritorio3" class="badge badge-dark"></span>
+                        </td>
+                    </tr>
+                    <tr id="mesa4">
+                        <td>
+                            <span id="lblTicket4" class="ticket-secundario"></span>
+                            <br>
+                            <span id="lblEscritorio4" class="badge badge-dark"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <div class="container-icons">
+        <div class="row-icon icon1">
+            <h4><label class="link" for=""><a href="solicitar-ticket.html">Nuevo</a></label></h4>
+        </div>
+        <div class="row-icon icon2">
+            <h4><label class="link" for=""><a href="index.html">Publica</a></label></h4>
+        </div>
+        <div class="row-icon icon3">
+                <form action="escritorio.html">
+                        <div class="input-group mb-3" style="width: 150px;">
+                                <input name="escritorio" type="number" class="form-control" placeholder="Escritorio" autofocus required>
+                                <div class="input-group-append">
+                                  <input class="btn btn-danger" type="submit" id="button-addon2" value="Ir">
+                                </div>
+                              </div>
+                </form>
+        </div>
+        <h2 class="fas fa-plus-circle icon-plus"></h2>
+    </div>
+
+
+    <script src="js/libs/jquery.min.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="js/socket.publico.js"></script>
+</body>
+
+</html>

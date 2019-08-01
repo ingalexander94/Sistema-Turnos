@@ -1,0 +1,301 @@
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.alto{
+  height: 50%;
+  background: #1E2528;
+}
+
+.altura{
+    height: 50%;
+    background: #1E2528;
+    text-align: center;
+}
+
+.altura h1{
+  position: absolute;
+}
+
+.slot
+{
+  position: relative;
+  display: inline-block;
+  margin: auto;
+  width: 200px;
+  height: 50px;
+  background: #404647;
+  border-top: 5px solid #353A3B;
+  border-radius: 2px;
+}
+
+.slot:after
+{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  width: 60%;
+  height: 10px;
+  margin: -5px 0 0;
+  background: #17191A;
+  border-radius: 5px;
+  box-shadow: inset 0 -5px #222526;
+}
+
+.ticket
+{
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 25%;
+  width: 50%;
+  height: 140px;
+  line-height: 140px;
+  margin: -5px 0 0;
+  background: #C282C3;
+  text-decoration: none;
+  display: none;
+}
+
+.actual{
+  font-size: 120px;
+  color: #00ff21;
+}
+
+.parrafo{
+  font-size: 50px;
+}
+
+.ticket:before, .ticket:after, .ticket > b, .ticket > c, .ticket > d
+{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  background: #1E2528;
+  border-radius: 100%;
+}
+
+.ticket:after { left: 23px; }
+.ticket > b { left: 43px; }
+.ticket > c { left: 63px; }
+.ticket > d { left: 83px; }
+
+.ticket > em
+{
+  display: block;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  bottom: 25px;
+  left: 25px;
+  background: #B471B5;
+}
+
+.ticket > em > b, .ticket > em > c
+{
+  display: block;
+  position: relative;
+}
+
+.ticket > em > b:before, .ticket > em > b:after, .ticket > em > c:before, .ticket > em > c:after
+{
+  content: "";
+  display: block;
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+  background: #C282C3;
+  border-radius: 100%;
+}
+
+.ticket > em > b:after
+{
+  left: auto;
+  right: -8px;
+}
+
+.ticket > em > c
+{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.ticket > em > c:after
+{
+  left: auto;
+  right: -8px;
+}
+
+.ticket > label
+{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 100px;
+  width: 140px;
+  height: 100px;
+  line-height: 100px;
+  vertical-align: middle;
+  -webkit-transform-origin: 0 0;
+  -webkit-transform: rotate(90deg);
+  color: rgb(171, 40, 173);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.wrapper {
+  width: 150px;
+  height: 150px;
+}
+
+
+/* We hide the input and place it on top of everything else */
+
+.wrapper input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 100;
+}
+
+
+/* Let's deal with the label now, which is our graphical element */
+
+.wrapper label {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: all .1s ease-in-out;
+  border-radius: 50%;
+  position: relative;
+ /* background: linear-gradient(#f7f2f6, #b2ac9e);*/
+  box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.13), 0 5px 8px rgb(0, 0, 0), 0 10px 10px 4px rgba(0, 0, 0, 0.49);
+  /* Now let's give it some font styles, for the incoming icon */
+  font-size: 70px;
+  line-height: 105px;
+  text-shadow: 0 0px 10px red;
+  text-align: center;
+  z-index: 1;
+  /* We will need this later */
+  font-family: FontAwesome;
+  content: "\f000";
+  color: red;
+}
+
+
+/* Now pseudo-elements, just to make the whole button nicer */
+
+.wrapper label:after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  bottom: -20px;
+  left: -20px;
+  z-index: -2;
+  border-radius: 20%;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.3), 0 0 10px rgb(0, 0, 0);
+}
+
+
+/* The second one */
+
+.wrapper label:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  bottom: -10px;
+  left: -10px;
+  z-index: -1;
+  border-radius: inherit;
+  box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.13);
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+  /* The blur filter is a little smooth trick. It makes those kind of shadows smoother. Looks great, doesn't it ? */
+}
+
+
+/* A last thing to make it looks even better */
+
+.wrapper .icon-off:after {
+    position: absolute;
+    border-radius: 50%;
+    left: 15%;
+    top: 15%;
+    width: 70%;
+    height: 70%;
+    z-index: -1;
+    background: linear-gradient(#555, #1e1e1e);
+    box-shadow: 0 -2px 5px #222, 0 2px 5px #1e1e1e;
+    font-family: FontAwesome;
+    content: "\f011";
+}
+
+.light {
+  display: block;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  background: -webkit-radial-gradient(center, ellipse cover, #ff7272 0%, #f80404 80%, #de3232 100%);
+  background: -moz-radial-gradient(center, ellipse cover, #ff7272 0%, #f80404 80%, #de3232 100%);
+  background: radial-gradient(center, ellipse cover, #ff7272 0%, #f80404 80%, #de3232 100%);
+  box-shadow: inset 0 1px 1px 0 #999, inset 0 -1px 1px 0 #999, 0 0 5px 1px #f00;
+  border-radius: 50%;
+  transition: all .1s ease-in-out;
+}
+
+
+/* It looks awesome, but we need to take care of the :checked state since the button has 2 states. From there, :checked is our friend! */
+.wrapper input:checked ~ label .icon-off:after {
+    position: absolute;
+    border-radius: 50%;
+    left: 15%;
+    top: 15%;
+    width: 70%;
+    height: 70%;
+    z-index: -1;
+    background: linear-gradient(#1e1e1e,#555);
+    box-shadow: 0 -2px 5px #222, 0 2px 5px #1e1e1e;
+    font-family: FontAwesome;
+    content: "\f011";
+}
+
+.wrapper input:checked ~ label {
+  box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.13), 0 5px 8px rgba(0, 0, 0, 0.35), 0 3px 10px 4px rgba(0, 0, 0, 0.2);
+  color: #00ff21;
+  text-shadow: 0 0 10px #00ff21;
+}
+
+#onoff:checked + label .light {
+  background: -webkit-radial-gradient(center, ellipse cover, #ccffce 0%, #91ff88 60%, #00ff15 100%);
+  background: -moz-radial-gradient(center, ellipse cover, #fcc 0%, #f88 60%, #f00 100%);
+  background: radial-gradient(center, ellipse cover, #fcc 0%, #f88 60%, #f00 100%);
+  box-shadow: inset 0 1px 1px 0 #999, inset 0 -1px 1px 0 #999, 0 0 5px 1px #55ff6b;
+  transition: all .1s linear;
+}
+
+@media (min-width: 310px) and (max-width: 850px) {
+  .altura{
+    height: 350px;
+  }
+}
+
